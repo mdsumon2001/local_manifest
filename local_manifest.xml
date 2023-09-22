@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    
+   
+
+    <!-- Remote -->
     <remote name="sumon" fetch="https://github.com/mdsumon2001" />
-    <remote name="irawan" fetch="https://github.com/dodyirawan85" />
-    <remote name="los" fetch="https://github.com/LineageOS" />
     <remote name="ImSurajxD" fetch="https://gitlab.com/ImSurajxD" />
-    
-    <!-- Device and Vendor trees -->
-    <project path="device/realme/RMX2185" name="device_realme_RMX2185" remote="sumon" revision="lineage-18.1" clone-depth="1" />
+    <remote name="azr" fetch="https://dev.azure.com/ozipoetra120/test/_git"/>
+
+    <!-- Device Tree -->
+    <project path="device/realme/RMX2185" name="device_realme_RMX2185" remote="sumon" revision="superior-11" clone-depth="1" />
+
+    <!-- Vendor Tree -->
     <project path="vendor/realme/RMX2185" name="vendor_realme_RMX2185" remote="sumon" revision="lineage-18.1" clone-depth="1" />
+   
+    <!-- Kernel Tree -->
     <project path="kernel/realme/mt6765" name="android_kernel_realme_mt6765" remote="sumon" revision="lineage-17.1" clone-depth="1" />
 
-    <!-- Patches -->
-    <remove-project name="platform/external/selinux" />
-    <project path="external/selinux" name="android_external_selinux" remote="los" revision="lineage-17.1" clone-depth="1" />
-    <project path="prebuilts/clang/host/linux-x86/clang-r450784d" name="clang-r450784d" remote="ImSurajxD" revision="master" clone-depth="1" />
-    
+    <!-- Clang -->
+    <project path="prebuilts/clang/host/linux-x86/clang-r487747c" name="clang-r487747c" remote="azr" revision="main" clone-depth="1"/>
+
 </manifest>
