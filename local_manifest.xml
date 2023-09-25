@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <remote name="sumon" fetch="https://github.com/mdsumon2001" />
-    <remote name="ImSurajxD" fetch="https://gitlab.com/ImSurajxD" />
     <remote name="lineage" fetch="https://github.com/LineageOS"revision="lineage-19.1" />
     <remote name="github" fetch="https://github.com" />
     
@@ -14,5 +13,5 @@
     <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" remote="lineage" revision="master" />
     
     <!-- Patches -->
-    <project path="prebuilts/clang/host/linux-x86/clang-r450784d" name="clang-r450784d" remote="ImSurajxD" revision="master" clone-depth="1" />
+    <project path="prebuilts/clang/host/linux-x86/clang-r383902" name="moto-common/platform_prebuilts_clang_host_linux-x86_clang-r383902" remote="github" revision="master" />
     
