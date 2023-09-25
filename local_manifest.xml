@@ -2,11 +2,17 @@
 <manifest>
     <remote name="sumon" fetch="https://github.com/mdsumon2001" />
     <remote name="ImSurajxD" fetch="https://gitlab.com/ImSurajxD" />
-
+    <remote name="lineage" fetch="https://github.com/LineageOS"revision="lineage-19.1" />
+    <remote name="github" fetch="https://github.com" />
+    
     <!-- Device and Vendor trees -->
     <project path="device/realme/RMX2185" name="dt_realme_g35" remote="sumon" revision="rmx2185-crdroid-12.1" clone-depth="1" />
     <project path="vendor/realme/RMX2185" name="vt_realme_g35" remote="sumon" revision="g35" clone-depth="1" />
 
+    <!-- Extra -->
+    <remove-project name="LineageOS/android_external_chromium-webview_patches" />
+    <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" remote="lineage" revision="master" />
+    
     <!-- Patches -->
     <project path="prebuilts/clang/host/linux-x86/clang-r450784d" name="clang-r450784d" remote="ImSurajxD" revision="master" clone-depth="1" />
     
