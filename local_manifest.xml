@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-    
-    <remote name="sumon" fetch="https://github.com/mdsumon2001" />
-    <remote name="irawan" fetch="https://github.com/dodyirawan85" />
-    <remote name="los" fetch="https://github.com/LineageOS" />
-    <remote name="ImSurajxD" fetch="https://gitlab.com/ImSurajxD" />
-    
-    <!-- Device and Vendor trees -->
-    <project path="device/realme/RMX2185" name="device_realme_RMX2185" remote="sumon" revision="main" clone-depth="1" />
-    <project path="vendor/realme/RMX2185" name="vendor_realme_RMX2185" remote="sumon" revision="lineage-18.1" clone-depth="1" />
-    <project path="kernel/realme/mt6765" name="android_kernel_realme_mt6765" remote="sumon" revision="lineage-17.1" clone-depth="1" />
 
-    <!-- Patches -->
-    <remove-project name="platform/external/selinux" />
-    <project path="external/selinux" name="android_external_selinux" remote="los" revision="lineage-17.1" clone-depth="1" />
-    <project path="prebuilts/clang/host/linux-x86/clang-r450784d" name="clang-r450784d" remote="ImSurajxD" revision="master" clone-depth="1" />
-    
+<manifest>
+
+  <remote name="sumon" fetch="https://github.com/mdsumon2001" />
+  <remote name="sr" fetch="https://github.com/strongreasons" />
+
+        <!-- Device Tree -->
+        <project path="device/realme/RMX3061" name="device_realme_RMX3061" remote="sumon" revision="rr-10-RMX3061" />
+        <!-- Vendor Tree -->
+        <project path="vendor/realme/RMX3061" name="vendor_realme_RMX3061" remote="sumon" revision="A.51-TREE-BASE" />
+        <!-- Kernel Tree -->
+        <project path="kernel/realme/RMX3061" name="kernel_realme_RMX3061" remote="sumon" revision="master" />
+
+        <remove-project name="android_build" />
+        <project path="build/make" name="rr_build" remote="sr" revision="Q" groups="pdk" >
+        <copyfile src="core/root.mk" dest="Makefile" />
+        <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+        <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+        <linkfile src="core" dest="build/core" />
+        <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+        <linkfile src="target" dest="build/target" />
+        <linkfile src="tools" dest="build/tools" />
+        </project>
+
+        <remove-project name="android_device_qcom_sepolicy-legacy" />
+        <remove-project name="android_device_qcom_sepolicy-legacy-um" />
+        <remove-project name="android_frameworks_base" />
+        <remove-project name="android_system_core" />
+        <remove-project name="android_vendor_resurrection" />
+        <project path="device/qcom/sepolicy-legacy" name="android_device_qcom_sepolicy-legacy" remote="sr" revision="Q" />
+        <project path="device/qcom/sepolicy-legacy-um" name="android_device_qcom_sepolicy-legacy-um" remote="sr" revision="Q" />
+        <project path="frameworks/base" name="rr_frameworks_base" remote="sr" revision="Q" />
+        <project path="system/core" name="rr_system_core" remote="sr" revision="Q" />
+        <project path="vendor/rr" name="android_vendor_resurrection" remote="sr" revision="Q" />
+
+        <!-- Audio -->
+        <remove-project name="LineageOS/android_hardware_qcom_audio" />
+        <project path="hardware/qcom-caf/msm8998/audio" name="hardware_qcom-caf_msm8998_audio" remote="sr" revision="ten" />
+
 </manifest>
