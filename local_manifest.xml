@@ -12,8 +12,6 @@
     <project path="kernel/realme/mt6765" name="android_kernel_realme_mt6765" remote="sumon" revision="lineage-17.1" clone-depth="1" />
 
     <!-- Patches -->
-    <remove-project name="platform/external/selinux" />
-    <project path="external/selinux" name="android_external_selinux" remote="los" revision="lineage-17.1" clone-depth="1" />
     <project path="prebuilts/clang/host/linux-x86/clang-r450784d" name="clang-r450784d" remote="ImSurajxD" revision="master" clone-depth="1" />
     
 </manifest>
